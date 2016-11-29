@@ -27,22 +27,22 @@ var Options2 = function(options) {
 
     $('.selectAll').on('click', function(event){
         $('.check').each(function(index, element){
-            $(element).attr('checked', true)
+            $(element).attr('checked', 'checked')
         })
     })
 
     $('.selectInverse').on('click', function(event){
         $('.check').each(function(index, element){
             if ($(element).attr('checked')) {
-                $(element).attr('checked', false)
+                $(element).removeAttr('checked')
             } else {
-                $(element).attr('checked', true)
+                $(element).attr('checked', 'checked')
             }
 
         })
     })
 }
 
-arr = ['做饭','睡觉', '学习',]
-log('15-1加载完成')
-Options2(arr)
+// arr = ['做饭','睡觉', '学习',]
+// log('15-1加载完成')
+// Options2(arr)
