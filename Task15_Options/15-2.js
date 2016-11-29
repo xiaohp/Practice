@@ -43,6 +43,6 @@ var Options2 = function(options) {
     })
 }
 
-arr = ['做饭','睡觉', '学习',]
-log('15-1加载完成')
-Options2(arr)
+// arr = ['做饭','睡觉', '学习',]
+// log('15-1加载完成')
+// Options2(arr)
