@@ -11,8 +11,8 @@
                 transform: translateY(-50%);
             }
             .gua-slide {
-                width: 300px;
-                height: 200px;
+                width: 730px;
+                height: 454px;
                 overflow: hidden;
             }
             .gua-slide-images {
@@ -55,9 +55,9 @@
     <body>
         <div class="gua-slide">
             <div class="gua-slide-images" data-active="0" data-imgs="3">
-                <img class='gua-slide-img gua-slide-active' src="1.jpg" alt="">
-                <img class='gua-slide-img' src="2.jpg" alt="">
-                <img class='gua-slide-img' src="3.jpg" alt="">
+                <img class='gua-slide-img gua-slide-active' src="images/1.jpg" alt="">
+                <img class='gua-slide-img' src="images/2.jpg" alt="">
+                <img class='gua-slide-img' src="images/3.jpg" alt="">
                 <button class='gua-slide-button gua-slide-button-left vertical-center' type="button" >上</button>
                 <button class='gua-slide-button gua-slide-button-right vertical-center' type="button" >下</button>
             </div>
@@ -123,8 +123,8 @@
                 var value = $($(event.target)).text()
                 playMouse(value)
             })
-            // 作业 4
-            //
+
+            // 练习 4
             // 用一个函数传递图片 URL 参数来创建一个 slide
             // 函数如下
             var GuaSlide = function(element, images) {
