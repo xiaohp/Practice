@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Slides</title>
+        <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="css/master.css">
+    </head>
+    <body>
+        <div class="slide-container">
+            <div class="slide-images" data-active="0" data-imgs="3">
+                <img class='slide-img slide-img-active' src="images/1.jpg">
+                <img class='slide-img' src="images/2.jpg">
+                <img class='slide-img' src="images/3.jpg">
+                <button class='slide-button slide-button-left vertical-center' type="button" >上</button>
+                <button class='slide-button slide-button-right vertical-center' type="button" >下</button>
+            </div>
+            <div class="slide-indicators">
+                <div class="slide-indicator indicator-active">1</div>
+                <div class="slide-indicator">2</div>
+                <div class="slide-indicator">3</div>
+            </div>
+        </div>
+        <script src="slides.js"></script>
+    </body>
+</html>
