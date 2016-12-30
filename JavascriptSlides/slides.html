@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>fe 12</title>
+        <link rel="stylesheet" href="light.css">
+
+        <style media="screen">
+            /* 第 1 题 */
+            .tabContent {
+                width: 300px;
+                height: 200px;
+                background-color: lightblue;
+                display: none;
+            }
+            .tab .tabActive {
+                display: block;
+            }
+            /* 第 2 题 */
+            .thumbnail {
+                width: 590px;
+                height: 68px;
+                text-align: center;
+            }
+            /* 第 4 题 */
+            .gua-slide {
+                position: relative;
+                width: 590px;
+                height: 340px;
+                text-align: center;
+            }
+            .gua-slide-image {
+                display: none;
+            }
+            /*.gua-slide-image*/
+            .gua-active {
+                display: inline-block;;
+            }
+            .gua-slide-next {
+                right: 0;
+            }
+            .gua-slide-previous {
+                left: 0;
+            }
+            .gua-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .gua-slide-indicators {
+                position: absolute;
+                bottom: 10px;
+                text-align: center;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .gua-slide-indi {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+            }
+            .gua-white {
+                background: white;
+            }
+        </style>
+        <script src="gua.js"></script>
+    </head>
+    <body>
+        <p>第 1 题</p>
+        <div class="tab">
+            <button type="button" data-index=0 class="switch">标签 1</button>
+            <button type="button" data-index=1 class="switch">标签 2</button>
+            <button type="button" data-index=2 class="switch">标签 3</button>
+            <div class="tabContent tabActive">内容 1</div>
+            <div class="tabContent">内容 2</div>
+            <div class="tabContent">内容 3</div>
+        </div>
+        <p>第 2 题</p>
+        <div class="gallery">
+            <img class="bigpicture" src="galleryImages/1.jpg" alt="">
+            <div class="thumbnail">
+                <img data-index=1 class="indicateImg" src="galleryImages/1-min.jpg" alt="">
+                <img data-index=2 class="indicateImg" src="galleryImages/2-min.jpg" alt="">
+                <img data-index=3 class="indicateImg" src="galleryImages/3-min.jpg" alt="">
+            </div>
+        </div>
+        <p>第 3 题</p>
+        <div class="theme">
+            <button type="button" class="lightmode">正常模式</button>
+            <button type="button" class="darkmode">夜间模式</button>
+        </div>
+        <p>第 4 题</p>
+        <div class="slide-3">
+            <!-- data-imgs 是图片的总数 -->
+            <!-- data-active 是当前显示的图片的下标 -->
+            <div class="gua-slide" data-imgs=3 data-active=0>
+                <img id=id-guaimage-0 class="gua-slide-image gua-active" src="slideimages/1.jpg" alt="">
+                <img id=id-guaimage-1 class=gua-slide-image src="slideimages/2.jpg" alt="">
+                <img id=id-guaimage-2 class=gua-slide-image src="slideimages/3.jpg" alt="">
+                <button class="slide-button gua-slide-previous gua-vertical-center">上一张</button>
+                <button class="slide-button gua-slide-next gua-vertical-center">下一张</button>
+                <div class="gua-slide-indicators">
+                    <div id=id-indi-0 class="gua-slide-indi gua-white"></div>
+                    <div id=id-indi-1 class="gua-slide-indi"></div>
+                    <div id=id-indi-2 class="gua-slide-indi"></div>
+                </div>
+            </div>
+        </div>
+        <script src="slides.js"></script>
+    </body>
+</html>
