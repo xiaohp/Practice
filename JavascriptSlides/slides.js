@@ -5,7 +5,7 @@
     3, 在 click 的时候, 根据上课中 下一张 按钮的事件响应来实现 上一张 的功能
 */
 var playImg = function(offset) {
-    var slide =document.querySelector('.gua-slide')
+    var slide =document.querySelector('.slide-container')
     // 得到图片总数和当前图片下标
     var numberOfImgs = parseInt(slide.dataset.imgs)
     var activeIndex = parseInt(slide.dataset.active)
@@ -13,14 +13,14 @@ var playImg = function(offset) {
     // 设置 slide 节点的 data-active
     slide.dataset.active = nextIndex
     // 切换图片
-    var className = 'gua-active'
+    var className = 'img-active'
     removeClassAll(className)
-    var img = document.querySelectorAll('.gua-slide-image')[nextIndex]
+    var img = document.querySelectorAll('.slide-image')[nextIndex]
     img.classList.add(className)
     // 改变指示器
-    var indiClassName = 'gua-white'
+    var indiClassName = 'indicator-active'
     removeClassAll(indiClassName)
-    var indi = document.querySelectorAll('.gua-slide-indi')[nextIndex]
+    var indi = document.querySelectorAll('.slide-indi')[nextIndex]
     indi.classList.add(indiClassName)
 }
 
@@ -36,9 +36,9 @@ var bindEventSlide = function() {
     var selector = '.slide-button'
     bindAll(selector, 'click', function(event){
         var target = event.target
-        if (target.classList.contains('gua-slide-next')) {
+        if (target.classList.contains('button-next')) {
             playNext()
-        } else if (target.classList.contains('gua-slide-previous')) {
+        } else if (target.classList.contains('button-previous')) {
             playPrevious()
         }
     })
@@ -46,10 +46,10 @@ var bindEventSlide = function() {
 
 // 实现轮播图的小圆点切换显示，在 下一张/上一张 按钮的事件处理函数中也给对应 index 的小圆点加上相应的 class
 var bindEventIndicator = function() {
-    var selector = '.gua-slide-indi'
+    var selector = '.slide-indi'
     bindAll(selector, 'mouseover', function(event){
         var target = event.target
-        var slide = target.closest('.gua-slide')
+        var slide = target.closest('.slide-container')
         // 得到图片总数和当前图片下标
         var numberOfImgs = parseInt(slide.dataset.imgs)
         var activeIndex = parseInt(slide.dataset.active)
@@ -57,14 +57,14 @@ var bindEventIndicator = function() {
         var index = target.id.slice(8)
         slide.dataset.active = index
         // 删除当前图片的 class 给下一张图片加上 class
-        var className = 'gua-active'
+        var className = 'img-active'
         removeClassAll(className)
-        var img = document.querySelectorAll('.gua-slide-image')[index]
+        var img = document.querySelectorAll('.slide-image')[index]
         img.classList.add(className)
         // 改变指示器
-        var indiClassName = 'gua-white'
+        var indiClassName = 'indicator-active'
         removeClassAll(indiClassName)
-        var indi = document.querySelectorAll('.gua-slide-indi')[index]
+        var indi = document.querySelectorAll('.slide-indi')[index]
         indi.classList.add(indiClassName)
     })
 }
@@ -80,7 +80,7 @@ var timePlay = function() {
     var auto = setInterval(function(){
         playNext()
     }, 1000)
-    var slide = document.querySelector(".gua-slide")
+    var slide = document.querySelector(".slide-container")
     slide.addEventListener('mouseover', function(){
         clearInterval(auto)
     })

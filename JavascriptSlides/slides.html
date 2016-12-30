@@ -3,68 +3,26 @@
     <head>
         <meta charset="utf-8">
         <title>Javascript Slides</title>
-        <style media="screen">
-            .gua-slide {
-                position: relative;
-                width: 790px;
-                height: 340px;
-                text-align: center;
-            }
-            .gua-slide-image {
-                display: none;
-            }
-            /*.gua-slide-image*/
-            .gua-active {
-                display: inline-block;;
-            }
-            .gua-slide-next {
-                right: 0;
-            }
-            .gua-slide-previous {
-                left: 0;
-            }
-            .gua-vertical-center {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            .gua-slide-indicators {
-                position: absolute;
-                bottom: 10px;
-                text-align: center;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .gua-slide-indi {
-                display: inline-block;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: red;
-            }
-            .gua-white {
-                background: white;
-            }
-        </style>
+        <link rel="stylesheet" href="css/master.css">
         <script src="tool.js"></script>
     </head>
     <body>
         <!-- data-imgs 是图片的总数 -->
         <!-- data-active 是当前显示的图片的下标 -->
-        <div class="gua-slide" data-imgs=5 data-active=0>
-            <img class="gua-slide-image gua-active" src="slideimages/1.jpg" alt="">
-            <img class="gua-slide-image" src="slideimages/2.jpg" alt="">
-            <img class="gua-slide-image" src="slideimages/3.jpg" alt="">
-            <img class="gua-slide-image" src="slideimages/4.jpg" alt="">
-            <img class="gua-slide-image" src="slideimages/5.jpg" alt="">
-            <button class="slide-button gua-slide-previous gua-vertical-center">上一张</button>
-            <button class="slide-button gua-slide-next gua-vertical-center">下一张</button>
-            <div class="gua-slide-indicators">
-                <div id=id-indi-0 class="gua-slide-indi gua-white"></div>
-                <div id=id-indi-1 class="gua-slide-indi"></div>
-                <div id=id-indi-2 class="gua-slide-indi"></div>
-                <div id=id-indi-3 class="gua-slide-indi"></div>
-                <div id=id-indi-4 class="gua-slide-indi"></div>
+        <div class="slide-container" data-imgs=5 data-active=0>
+            <img class="slide-image img-active" src="slideimages/1.jpg" alt="">
+            <img class="slide-image" src="slideimages/2.jpg" alt="">
+            <img class="slide-image" src="slideimages/3.jpg" alt="">
+            <img class="slide-image" src="slideimages/4.jpg" alt="">
+            <img class="slide-image" src="slideimages/5.jpg" alt="">
+            <button class="slide-button button-previous vertical-center">上一张</button>
+            <button class="slide-button button-next vertical-center">下一张</button>
+            <div class="slide-indicators">
+                <div id=id-indi-0 class="slide-indi indicator-active"></div>
+                <div id=id-indi-1 class="slide-indi"></div>
+                <div id=id-indi-2 class="slide-indi"></div>
+                <div id=id-indi-3 class="slide-indi"></div>
+                <div id=id-indi-4 class="slide-indi"></div>
             </div>
         </div>
         <script src="slides.js"></script>
