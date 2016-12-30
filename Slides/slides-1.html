@@ -76,6 +76,8 @@
             var play = function(offset) {
                 var activeIndex = $('.gua-slide-images').data('active')
                 var numberOfImgs = $('.gua-slide-images').data('imgs')
+                // log('type of activeIndex', activeIndex, typeof activeIndex)
+                // log('type of numberOfImgs', numberOfImgs, typeof numberOfImgs)
                 var i = (activeIndex + numberOfImgs + offset) % numberOfImgs
                 $('.gua-slide-images').data('active', i)
 
