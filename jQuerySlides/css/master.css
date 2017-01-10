@@ -3,36 +3,52 @@
     position: relative;
     transform: translateY(-50%);
 }
+
 .slide-container {
     width: 730px;
     height: 454px;
     overflow: hidden;
 }
+
 .slide-images {
     position: relative;
     width: 100%;
     height: 100%;
 }
+
 .slide-button {
     position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px 10px 20px 10px;
 }
+/*鼠标悬浮时设置不透明度*/
+.slide-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .slide-button-left {
     left: 0;
 }
+
 .slide-button-right {
     right: 0;
 }
+
 .slide-img {
     display: none;
 }
+
 .slide-img-active {
     display: block;
 }
+
 .slide-indicators {
     bottom: 20px;
     position: relative;
     text-align: center;
 }
+
 .slide-indicator {
     display: inline-block;
     background: darkblue;
@@ -40,6 +56,7 @@
     border-radius: 50%;
     padding: 0 5px;
 }
+
 .indicator-active {
     background: red;
 }

@@ -4,23 +4,29 @@
     height: 340px;
     text-align: center;
 }
+
 .slide-image {
     display: none;
 }
+
 .img-active {
     display: inline-block;;
 }
+
 .button-next {
     right: 0;
 }
+
 .button-previous {
     left: 0;
 }
+
 .vertical-center {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
+
 .slide-indicators {
     position: absolute;
     bottom: 10px;
@@ -28,6 +34,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
 .slide-indi {
     display: inline-block;
     width: 10px;
@@ -35,6 +42,17 @@
     border-radius: 50%;
     background: red;
 }
+
 .indicator-active {
     background: white;
+}
+
+.slide-button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px 10px 20px 10px;
+}
+/*鼠标悬浮时设置不透明度*/
+.slide-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
