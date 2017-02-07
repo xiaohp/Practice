@@ -47,7 +47,7 @@ cs.carousel1 = function (active) {
 
 // 普通轮播
 cs.carousel2 = function (active) {
-    log('active is ', active)
+    // log('active is ', active)
     cs.preprocess(active)
     $('.poster-item').addClass('transparent')
     $('.active').removeClass('active')
