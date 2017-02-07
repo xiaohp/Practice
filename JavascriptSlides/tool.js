@@ -22,6 +22,7 @@ var toggleClass = function(element, className) {
     }
 }
 
+
 var removeClassAll = function(className) {
     var selector = '.' + className
     var elements = document.querySelectorAll(selector)
