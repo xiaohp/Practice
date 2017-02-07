@@ -1,0 +1,166 @@
+.poster-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-btn{
+    z-index: 30;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    color: transparent;
+    font-size: 200px;
+}
+
+.poster-btn:hover{
+    color: lightgray;
+    opacity: 0.5;
+    -webkit-transition: all 1s;
+}
+
+.poster-list{
+    /*text-align:center;*/
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.poster-item{
+    display: inline-block;
+    border: thin solid grey;
+    position: absolute;
+    left: 25%;
+    z-index: 20;
+}
+
+.poster-item img{
+    width: 298px;
+    height: 298px;
+}
+
+
+.prev1{
+    left: -5%;
+    transform: scale(0.8);
+    /*opacity: 0.5;*/
+    z-index: 1;
+}
+.next1{
+    left: 55%;
+    transform: scale(0.8);
+    /*opacity: 0.5;*/
+    z-index: 1;
+}
+.prev{
+    left: 10%;
+    transform: scale(0.9);
+    /*opacity: 0.7;*/
+    z-index: 10;
+}
+.next{
+    left: 40%;
+    transform: scale(0.9);
+    /*opacity: 0.7;*/
+    z-index: 10;
+}
+
+
+.lmxu-prev1{
+    left: -75%;
+    z-index: 1;
+}
+.lmxu-next1{
+    left: 125%;
+    z-index: 1;
+}
+.lmxu-prev{
+    left: -25%;
+    z-index: 10;
+}
+.lmxu-next{
+    left: 75%;
+    z-index: 10;
+}
+
+.transparent{opacity: 0;}
+.active{opacity: 1;}
+
+
+.poster-btn:hover, dot:hover{
+    cursor: pointer;
+}
+.change{
+    -webkit-transition: all .5s;
+}
+
+.rotateHide{
+    -webkit-backface-visibility:hidden;
+    transform: rotateY(180deg);
+}
+
+.rotateShow{
+    -webkit-backface-visibility:hidden;
+    transform: rotateY(0deg);
+}
+
+.fp1{
+    border-width: medium;
+    transform: translateX(-190px) translateY(-15px) rotateY(75deg) rotateZ(5deg);
+    z-index: 10
+}
+.fp2{
+    transform: translateX(-185px) translateY(-15px) rotateY(75deg) rotateZ(5deg);
+    z-index: 21
+}
+.fp3{
+    transform: translateX(180px) translateY(-15px) rotateY(-75deg) rotateZ(-5deg);
+    z-index: 21
+}
+.fp4{
+    transform: translateX(185px) translateY(-15px) rotateY(-75deg) rotateZ(-5deg);
+    z-index: 10
+}
+
+
+.poster-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicater-cont{
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+}
+
+dot{
+    display: inline-block;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 31;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+.active-dot{
+    background-color: lightblue;
+}
+
+.switch{
+    display: flex;
+    justify-content: center;
+}
+
+.switch div{
+    font-size: 3em;
+}
