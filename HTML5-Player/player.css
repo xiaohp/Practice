@@ -1,6 +1,271 @@
-audio {
+* {
+    margin: 0;
+    padding: 0
+}
+
+/*audio {
     display: block;
+}*/
+
+body {
+    background-color: #ddd;
+}
+
+.container {
+    width: 400px;
+    height: 700px;
+    background-color: #fff;
+    margin: 20px auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.coverContainer {
+    height: 300px;
+    width: 300px;
+    margin: 10px auto;
+    /*text-align: center;*/
+
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.previous {
+    background: url('images/playing_prev.png');
+    width: 105px;
+}
+.previous:active {
+    background: url('images/playing_prev_down.png');
+}
+.play {
+    background: url('images/playing_play.png');
+    width: 128px;
+}
+.play:active {
+    background: url('images/playing_play_down.png');
+}
+.pause {
+    background: url('images/playing_pause.png');
+    width: 128px;
+}
+.pause:active {
+    background: url('images/playing_pause_down.png');
+}
+.next {
+    background: url('images/playing_next.png');
+    width: 105px;
+}
+.next:active {
+    background: url('images/playing_next_down.png');
+    width: 105px;
+}
+
+.control-button,
+.control-button:active {
+    height: 130px;
+    border: none;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
 }
 .playlist {
-    background-color: lightblue;
+    margin-top: 20px;
+    padding-left: 20px;
+    text-align: left;
+}
+.song {
+    margin: 5px;
+}
+/*VolumeControl*/
+input[type=range].volumnControl {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 12.8px 0;
+}
+input[type=range].volumnControl:focus {
+  outline: none;
+}
+input[type=range].volumnControl::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #aaa6a1;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].volumnControl::-webkit-slider-thumb {
+  box-shadow: 2px 2px 1px #000000, 0px 0px 2px #0d0d0d;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  height: 34px;
+  width: 19px;
+  border-radius: 4px;
+  background: #f4f3f2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -12.8px;
+}
+input[type=range].volumnControl:focus::-webkit-slider-runnable-track {
+  background: #b4b0ac;
+}
+input[type=range].volumnControl::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #aaa6a1;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].volumnControl::-moz-range-thumb {
+  box-shadow: 2px 2px 1px #000000, 0px 0px 2px #0d0d0d;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  height: 34px;
+  width: 19px;
+  border-radius: 4px;
+  background: #f4f3f2;
+  cursor: pointer;
+}
+input[type=range].volumnControl::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].volumnControl::-ms-fill-lower {
+  background: #a09c96;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].volumnControl::-ms-fill-upper {
+  background: #aaa6a1;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].volumnControl::-ms-thumb {
+  box-shadow: 2px 2px 1px #000000, 0px 0px 2px #0d0d0d;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  height: 34px;
+  width: 19px;
+  border-radius: 4px;
+  background: #f4f3f2;
+  cursor: pointer;
+  height: 8.4px;
+}
+input[type=range].volumnControl:focus::-ms-fill-lower {
+  background: #aaa6a1;
+}
+input[type=range].volumnControl:focus::-ms-fill-upper {
+  background: #b4b0ac;
+}
+
+.volumeContainer {
+    margin: 10px 20px;
+    padding: 0 10px;
+    border: 1px solid #E7E6E3;
+    border-radius: 5px;
+    background-color: ##FCFCFC;
+}
+
+/*progress control*/
+#id-input-progress {
+    width: 270px;
+    display: inline-block;
+    margin: 0 10px;
+}
+input[type=range].progress {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 3px 0;
+}
+input[type=range].progress:focus {
+  outline: none;
+}
+input[type=range].progress::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 9px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.49), 0px 0px 1px rgba(13, 13, 13, 0.49);
+  background: #aaa6a1;
+  border-radius: 10px;
+  border: 0px solid #010101;
+}
+input[type=range].progress::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000031, 0px 0px 1px #00004b;
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 47px;
+  background: #f4f3f2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3px;
+}
+input[type=range].progress:focus::-webkit-slider-runnable-track {
+  background: #c5c2be;
+}
+input[type=range].progress::-moz-range-track {
+  width: 100%;
+  height: 9px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.49), 0px 0px 1px rgba(13, 13, 13, 0.49);
+  background: #aaa6a1;
+  border-radius: 10px;
+  border: 0px solid #010101;
+}
+input[type=range].progress::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000031, 0px 0px 1px #00004b;
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 47px;
+  background: #f4f3f2;
+  cursor: pointer;
+}
+input[type=range].progress::-ms-track {
+  width: 100%;
+  height: 9px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].progress::-ms-fill-lower {
+  background: #8f8a84;
+  border: 0px solid #010101;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.49), 0px 0px 1px rgba(13, 13, 13, 0.49);
+}
+input[type=range].progress::-ms-fill-upper {
+  background: #aaa6a1;
+  border: 0px solid #010101;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.49), 0px 0px 1px rgba(13, 13, 13, 0.49);
+}
+input[type=range].progress::-ms-thumb {
+  box-shadow: 1px 1px 1px #000031, 0px 0px 1px #00004b;
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 47px;
+  background: #f4f3f2;
+  cursor: pointer;
+  height: 9px;
+}
+input[type=range].progress:focus::-ms-fill-lower {
+  background: #aaa6a1;
+}
+input[type=range].progress:focus::-ms-fill-upper {
+  background: #c5c2be;
 }

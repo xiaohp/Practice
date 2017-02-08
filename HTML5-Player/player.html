@@ -7,31 +7,39 @@
         <link rel="stylesheet" href="player.css">
     </head>
     <body>
-        <h1 id="id-h1-title">Music Player</h1>
-        <div class="player">
-            <audio id="id-audio-player" src="1.mp3" controls="controls"></audio>
+        <div class="container">
+            <h3 id="id-h3-title">Music Player</h3>
+            <div class="player">
+                <audio id="id-audio-player" src="1.mp3" controls="controls" hidden></audio>
 
-            <input type="range" id="id-input-progress" name="进度" value="0">
-            <input type="range" id="id-input-volume" name="音量" value="100">
 
-            <button type="button" id="id-button-previous">上一首</button>
-            <button type="button" id="id-button-play">播放</button>
-            <button type="button" id="id-button-pause">暂停</button>
-            <button type="button" id="id-button-next">下一首</button>
+                <div class="time">
+                    <span id="id-span-currentTime">0:00</span>
+                    <input type="range" id="id-input-progress" class="progress" name="进度" value="0">
+                    <span id="id-span-duration">0:00</span>
+                </div>
 
-            <span class="time">
-                <span id="id-span-currentTime">0</span>
-                <span>/</span>
-                <span id="id-span-duration"></span>
-            </span>
+                <div class="coverContainer">
+                    <img class="cover" src="images/1.jpg" alt="">
+                </div>
 
-            <div class="playlist" date-songs=3 data-active=0>
-                <div class="song" id="song-0" data-path="1.mp3">姜昕 - 潘多拉</div>
-                <div class="song" id="song-1" data-path="2.mp3">李志 - 天空之城</div>
-                <div class="song" id="song-2" data-path="3.mp3">汪峰 - 怒放的生命</div>
+                <button class="control-button previous" id="id-button-previous"></button>
+                <button class="control-button play" id="id-button-play"></button>
+                <button class="control-button next" id="id-button-next"></button>
+
+                <div class="volumeContainer">
+                    <input type="range" class="volumnControl" id="id-input-volume" name="音量" value="10">
+                </div>
+
+                <div class="playlist" date-songs=3 data-active=0>
+                    <div class="song" id="song-0">姜昕 - 潘多拉</div>
+                    <div class="song" id="song-1">李志 - 天空之城</div>
+                    <div class="song" id="song-2">汪峰 - 怒放的生命</div>
+                </div>
+
             </div>
-
         </div>
+
         <script src='player.js'></script>
     </body>
 </html>

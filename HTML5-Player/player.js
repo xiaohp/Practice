@@ -10,13 +10,17 @@ var playlist = document.querySelector(".playlist")
 var bindButtons = function() {
     var playButton = document.querySelector("#id-button-play")
     playButton.addEventListener('click', function(){
-        a.play()
-        duration.innerHTML = secondToMinute(a.duration)
-    })
+        if (a.paused) {
+            a.play()
+            playButton.classList.remove("play")
+            playButton.classList.add("pause")
+            duration.innerHTML = secondToMinute(a.duration)
+        } else {
+            a.pause()
+            playButton.classList.remove("pause")
+            playButton.classList.add("play")
+        }
 
-    var pauseButton = document.querySelector("#id-button-pause")
-    pauseButton.addEventListener('click', function(){
-        a.pause()
     })
 
     var nextButton = document.querySelector("#id-button-next")
@@ -50,10 +54,14 @@ var bindList = function() {
     for (var i = 0; i < songs.length; i++) {
         var song = songs[i]
         song.addEventListener('click', function(event){
+            // 获取点击 ID
             var self = event.target
-            a.src = self.dataset.path
             var index = self.id.slice(5)
+            // 切换音乐和封面
+            a.src = list[index]
             playlist.dataset.active = index
+            var cover = document.querySelector(".cover")
+            cover.src = coverList[index]
         })
     }
     // 加载音乐文件后，播放音乐，显示总时长，显示标题
@@ -61,6 +69,9 @@ var bindList = function() {
         a.play()
         duration.innerHTML = secondToMinute(a.duration)
         changeTitle()
+        var playButton = document.querySelector("#id-button-play")
+        playButton.classList.remove("play")
+        playButton.classList.add("pause")
     })
 }
 // 播放列表数组, 存储文件路径
@@ -70,11 +81,19 @@ var list = [
     "3.mp3",
 ]
 
+var coverList = [
+    "images/1.jpg",
+    "images/2.jpg",
+    "images/3.jpg",
+]
+
 var play = function(offset) {
     var number = list.length
     var index = parseInt(playlist.dataset.active)
     var nextIndex = (index + offset + number) % number
     a.src = list[nextIndex]
+    var cover = document.querySelector(".cover")
+    cover.src = coverList[nextIndex]
     playlist.dataset.active = nextIndex
 }
 // 播放下一首
@@ -95,7 +114,7 @@ var binPlayRepeat = function() {
 
 // 改变播放歌曲标题
 var changeTitle = function() {
-    var title = document.querySelector('#id-h1-title')
+    var title = document.querySelector('#id-h3-title')
     var index = playlist.dataset.active
     var songs = document.querySelectorAll('.song')
     var song = songs[index]
