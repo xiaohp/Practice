@@ -16,7 +16,7 @@
 
     [Demo](http://xiaohaiping.cc/Practice/HTML5-Player/player.html)
     [代码](https://github.com/xiaohp/Practice/tree/master/HTML5-Player)
-    截图：![mark](http://oih6hf7qs.bkt.clouddn.com/image/20170209-160221954.gif)
+    截图：![mark](http://oih6hf7qs.bkt.clouddn.com/image/20170209-161341326.gif)
 
 - 轮播切换效果
 
