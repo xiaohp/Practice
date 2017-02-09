@@ -11,6 +11,9 @@ body {
     background-color: #ddd;
 }
 
+#id-h3-title {
+    margin-bottom: 5px;
+}
 .container {
     width: 400px;
     height: 700px;

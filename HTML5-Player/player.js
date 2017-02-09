@@ -76,9 +76,9 @@ var bindList = function() {
 }
 // 播放列表数组, 存储文件路径
 var list = [
-    "1.mp3",
-    "2.mp3",
-    "3.mp3",
+    "http://oih6hf7qs.bkt.clouddn.com/music/1.mp3",
+    "http://oih6hf7qs.bkt.clouddn.com/music/2.mp3",
+    "http://oih6hf7qs.bkt.clouddn.com/music/3.mp3",
 ]
 
 var coverList = [
@@ -148,7 +148,12 @@ var bindProgress = function() {
     }, 1000)
 }
 
+var init = function() {
+    a.src = list[0]
+}
+
 var __main = function() {
+    init()
     bindButtons()
     bindList()
     binPlayRepeat()
