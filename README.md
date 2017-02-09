@@ -1,19 +1,15 @@
-## Welcome to GitHub Pages
+## 个人练习项目集
 
-You can use the [editor on GitHub](https://github.com/xiaohp/Practice/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. javascript 轮播图 [Demo](http://xiaohaiping.cc/Practice/JavascriptSlides/slides.html) [代码](https://github.com/xiaohp/Practice/tree/master/JavascriptSlides)
+2. jQuery 轮播图  [Demo](http://xiaohaiping.cc/Practice/jQuerySlides/slides.html) [代码](https://github.com/xiaohp/Practice/tree/master/jQuerySlides)
+3. HTML5 音乐播放器 [Demo](http://xiaohaiping.cc/Practice/HTML5-Player/player.html) [代码](https://github.com/xiaohp/Practice/tree/master/HTML5-Player)
+4. 轮播切换效果 [Demo](http://xiaohaiping.cc/Practice/Carousel/index.html) [代码](https://github.com/xiaohp/Practice/tree/master/Carousel)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
 Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
 
 - Bulleted
 - List
@@ -25,13 +21,3 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/xiaohp/Practice/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
