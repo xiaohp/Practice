@@ -4,10 +4,17 @@
     transform: translateY(-50%);
 }
 
+body {
+    background-color: #eee;
+}
 .slide-container {
     width: 730px;
     height: 454px;
     overflow: hidden;
+    position: absolute;
+    margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .slide-images {

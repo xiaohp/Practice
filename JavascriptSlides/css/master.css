@@ -1,5 +1,13 @@
+
+body {
+    background-color: #eee;
+}
+
 .slide-container {
-    position: relative;
+    position: absolute;
+    margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 790px;
     height: 340px;
     text-align: center;
