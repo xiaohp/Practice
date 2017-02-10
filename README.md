@@ -1,15 +1,15 @@
 ## 个人练习项目集
 
 
-- javascript 轮播图
-
-    [Demo](http://xiaohaiping.cc/Practice/JavascriptSlides/slides.html)
-    [代码](https://github.com/xiaohp/Practice/tree/master/JavascriptSlides)
-
 - jQuery 轮播图  
 
     [Demo](http://xiaohaiping.cc/Practice/jQuerySlides/slides.html)
     [代码](https://github.com/xiaohp/Practice/tree/master/jQuerySlides)
+
+- javascript 轮播图
+
+    [Demo](http://xiaohaiping.cc/Practice/JavascriptSlides/slides.html)
+    [代码](https://github.com/xiaohp/Practice/tree/master/JavascriptSlides)
     截图：![mark](http://oih6hf7qs.bkt.clouddn.com/image/20170209-160115568.jpg)
 
 - HTML5 音乐播放器
