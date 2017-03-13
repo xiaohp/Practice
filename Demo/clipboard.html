@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test page</title>
+        <script src="https://cdn.bootcss.com/clipboard.js/1.6.1/clipboard.js"></script>
+    </head>
+    <body>
+        <!-- Trigger -->
+        <button class="btn" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
+            Copy to clipboard
+        </button>
+
+        <script type="text/javascript">
+            var clipboard = new Clipboard('.btn');
+
+            clipboard.on('success', function(e) {
+                console.info('Action:', e.action);
+                console.info('Text:', e.text);
+                console.info('Trigger:', e.trigger);
+                e.clearSelection();
+            });
+
+            clipboard.on('error', function(e) {
+                console.error('Action:', e.action);
+                console.error('Trigger:', e.trigger);
+            });
+        </script>
+    </body>
+</html>

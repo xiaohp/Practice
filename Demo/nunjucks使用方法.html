@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nunjucks 模板引擎</title>
+    <script src="http://cdn.bootcss.com/nunjucks/3.0.0/nunjucks.min.js"></script>
+</head>
+<body>
+    <div class="gua-main">
+    </div>
+    <script>
+        // 渲染就是把模板字符串变成结果字符串的过程
+        // 
+        // 1, 直接渲染
+        // 语法是 {{ 变量名 }}  相当于 es6 模板字符串的 `${变量名}`
+        var arg = {
+            name: 'gua',
+        }
+        var html = nunjucks.renderString('<h1>Hello {{ name }}</h1>', arg)
+        console.log(html)
+
+        // 1, 循环渲染
+        // 注意语法
+        var t = `
+            {% for t in todos %}
+            <div class=todo-cell>
+                <span> {{ t.title }} </span>
+                <time> {{ t.time }} </time>
+                <button> 删除 </button>
+            </div>
+            {% endfor %}
+        `
+        var todos = [
+            {
+                title: '吃饭',
+                time: 345,
+            },
+            {
+                title: '吃饭',
+                time: 123,
+            },
+        ]
+        var arg = {
+            todos: todos,
+        }
+        var todoHtml = nunjucks.renderString(t, arg)
+        console.log(todoHtml)
+    </script>
+</body>
+</html>
