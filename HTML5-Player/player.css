@@ -3,10 +3,6 @@
     padding: 0
 }
 
-/*audio {
-    display: block;
-}*/
-
 body {
     background-color: #ddd;
 }
@@ -27,8 +23,6 @@ body {
     height: 300px;
     width: 300px;
     margin: 10px auto;
-    /*text-align: center;*/
-
 }
 
 img {

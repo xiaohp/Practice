@@ -1,9 +1,3 @@
-/*
-实现轮播图，使用按钮切换上一张和下一张
-    1, 添加一个 上一张 按钮
-    2, 给它绑定一个 click 事件
-    3, 在 click 的时候, 根据上课中 下一张 按钮的事件响应来实现 上一张 的功能
-*/
 var playImg = function(offset) {
     var slide =document.querySelector('.slide-container')
     // 得到图片总数和当前图片下标
@@ -44,7 +38,7 @@ var bindEventSlide = function() {
     })
 }
 
-// 实现轮播图的小圆点切换显示，在 下一张/上一张 按钮的事件处理函数中也给对应 index 的小圆点加上相应的 class
+// 实现轮播图的小圆点切换显示
 var bindEventIndicator = function() {
     var selector = '.slide-indi'
     bindAll(selector, 'mouseover', function(event){
@@ -69,13 +63,8 @@ var bindEventIndicator = function() {
     })
 }
 
-/*
-使用定时器实现轮播图的自动播放
-    1, 把 下一张 功能做成一个函数 playNext()
-    2, 使用 setInterval 函数来实现定时触发功能
-    3, 鼠标移入时，不自动播放
-    4, 鼠标移开时，自动播放
-*/
+
+// 使用定时器实现轮播图的自动播放
 var timePlay = function() {
     var auto = setInterval(function(){
         playNext()

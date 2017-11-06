@@ -26,7 +26,7 @@ var playNext = function() {
 }
 
 var bindButton = function() {
-    $('.slide-button').on('click', function(event){
+    $('.slide-button').on('click', function(event) {
         var button = $(event.target)
         if (button.hasClass('slide-button-left')) {
             playPrev()
@@ -53,24 +53,24 @@ var playMouse = function(index) {
 }
 
 var bindIndicator = function() {
-    $('.slide-indicator').on('mouseover', function(event){
+    $('.slide-indicator').on('mouseover', function(event) {
         var value = $($(event.target)).text()
         playMouse(value)
-        })
+    })
 }
 
 var timePlay = function() {
-    var auto = setInterval(function(){
+    var auto = setInterval(function() {
         playNext()
-    }, 1000)
+    }, 2000)
     var slide = document.querySelector(".slide-container")
-    slide.addEventListener('mouseover', function(){
+    slide.addEventListener('mouseover', function() {
         clearInterval(auto)
     })
-    slide.addEventListener('mouseout', function(){
-        auto = setInterval(function(){
+    slide.addEventListener('mouseout', function() {
+        auto = setInterval(function() {
             playNext()
-        }, 1000)
+        }, 2000)
     })
 }
 

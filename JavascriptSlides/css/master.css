@@ -35,7 +35,7 @@ body {
     transform: translateY(-50%);
 }
 
-.slide-indicators {
+.indicators {
     position: absolute;
     bottom: 10px;
     text-align: center;
@@ -49,6 +49,7 @@ body {
     height: 10px;
     border-radius: 50%;
     background: red;
+    cursor: pointer;
 }
 
 .indicator-active {
@@ -59,6 +60,7 @@ body {
     color: white;
     background-color: rgba(0, 0, 0, 0);
     padding: 20px 10px 20px 10px;
+    cursor: pointer;
 }
 /*鼠标悬浮时设置不透明度*/
 .slide-button:hover {

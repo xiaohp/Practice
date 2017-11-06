@@ -1,28 +1,26 @@
-// 自定义 log 函数
+// 自定义 log
 var log = function() {
     console.log.apply(console, arguments)
 }
 
-
-// 给 add button 绑定添加 todo 事件
-var addButton = document.querySelector('#id-button-add')
-addButton.addEventListener('click', function(){
-    // 获得 input.value
-    var todoInput = document.querySelector('#id-input-todo')
-    var todo = todoInput.value
-    // 新添加的 todo 为未完成状态
-    insertTodo(todo, false)
-    saveTodos()
-})
-
+// 绑定添加按钮
+var bindAdd = function() {
+    var addButton = document.querySelector('#id-button-add')
+    addButton.addEventListener('click', function() {
+        var todoInput = document.querySelector('#id-input-todo')
+        var todo = todoInput.value
+        // 新添加的 todo 为未完成状态
+        insertTodo(todo, false)
+        saveTodos()
+    })
+}
+// 添加 todo到 container 中
 var insertTodo = function(todo, done) {
-    // 添加到 container 中
     var todoContainer = document.querySelector('#id-div-container')
     var t = templateTodo(todo, done)
-    // 这个方法用来添加元素更加方便, 不需要 createElement
     todoContainer.insertAdjacentHTML('beforeend', t);
 }
-
+// todo 模板
 var templateTodo = function(todo, done) {
     var status = ''
     if (done) {
@@ -37,26 +35,34 @@ var templateTodo = function(todo, done) {
     `
     return t
 }
+// 绑定编辑删除
+var bindEdit = function() {
+    var todoContainer = document.querySelector('#id-div-container')
+    todoContainer.addEventListener('click', function(event) {
+        var target = event.target
+        if (target.classList.contains('todo-done')) {
+            log('don/e')
+            var todoDiv = target.parentElement
+            toggleClass(todoDiv, 'done')
+            saveTodos()
+        } else if (target.classList.contains('todo-delete')) {
+            var todoDiv = target.parentElement
+            todoDiv.remove()
+            saveTodos()
+        }
+    })
 
-var todoContainer = document.querySelector('#id-div-container')
+    // 编辑 todo 时，失去焦点保存
+    todoContainer.addEventListener('blur', function(event) {
+        log('container blur', event, event.target)
+        var target = event.target
+        if (target.classList.contains('content')) {
+            log('blur')
+            saveTodos()
+        }
+    })
+}
 
-// 通过 event.target 的 class 检查点击的是什么
-todoContainer.addEventListener('click', function(event){
-    log('container click', event, event.target)
-    var target = event.target
-    if(target.classList.contains('todo-done')) {
-        log('done')
-        // 给 todo div 开关一个状态 class
-        var todoDiv = target.parentElement
-        toggleClass(todoDiv, 'done')
-        saveTodos()
-    } else if (target.classList.contains('todo-delete')) {
-        // log('delete')
-        var todoDiv = target.parentElement
-        todoDiv.remove()
-        saveTodos()
-    }
-})
 // 辅助函数开关元素的某个 class
 var toggleClass = function(element, className) {
     if (element.classList.contains(className)) {
@@ -65,15 +71,7 @@ var toggleClass = function(element, className) {
         element.classList.add(className)
     }
 }
-// 编辑 todo 时，失去焦点保存
-todoContainer.addEventListener('blur', function(event){
-    log('container blur', event, event.target)
-    var target = event.target
-        if (target.classList.contains('content')) {
-            log('blur')
-            saveTodos()
-        }
-})
+
 // 保存数组到 localStorage
 var save = function(array) {
     var s = JSON.stringify(array)
@@ -90,10 +88,8 @@ var saveTodos = function() {
             'done': done,
             'content': c.innerHTML,
         }
-        // 添加到数组中
         todos.push(todo)
     }
-    // 保存数组
     save(todos)
 }
 // 从 localStorage 读取数据
@@ -112,4 +108,9 @@ var loadTodos = function() {
     }
 }
 
-loadTodos()
+var __main = function() {
+    bindAdd()
+    bindEdit()
+    loadTodos()
+}
+__main()
